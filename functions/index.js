@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/payment/create", async(req, res)=>{
-    const total = req.query.total;
+    const total = parseInt(req.query.total);
 
     if(total > 0) {
        const paymentIntent = await stripe.paymentIntents.create({
@@ -34,7 +34,7 @@ app.post("/payment/create", async(req, res)=>{
        })
     }else{
          res.status(403).json({
-            message:"total must begreater than 0",
+            message:"total must be greater than 0",
          });
     }
 })

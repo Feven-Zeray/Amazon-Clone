@@ -8,6 +8,7 @@ import { DataContext } from "../DataProvider/DataProvider";
 import { Type } from "../../Utility/action.type";
 
 function ProductCard({ product, flex, renderDesc, renderAdd }) {
+
   const { image, title, id, rating, price, description } = product;
 
   const [state, dispatch] = useContext(DataContext);
@@ -30,7 +31,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
   //  }
   function truncate(str, n) {
     if (typeof str !== "string") {
-      return str; // or return an empty string or another fallback value
+      return str; 
     }
     return str.length > n ? str.substr(0, n) + "..." : str;
   }
