@@ -18,7 +18,7 @@ function Routing() {
 
   return (
     <div>
-      <BrowserRouter>
+      <BrowserRouter basename="/Amazon-Clone">
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/auth" element={<Auth />} />
